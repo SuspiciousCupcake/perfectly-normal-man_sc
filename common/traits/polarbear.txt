@@ -1,4 +1,4 @@
-polarbear = {
+polarbear_trait = {
 	diplomacy = -3
 	stewardship = -3
 	martial = -3
@@ -16,17 +16,33 @@ polarbear = {
 	can_inherit = yes
 	blocks_from_claim_inheritance = no
 
-	desc = {
+	name = {
 		first_valid = {
 			triggered_desc = {
-				trigger = {
-					NOT = { exists = this }
-				}
-				desc = trait_polarbear_desc
+				trigger = { NOT = { exists = this } }
+				desc = polarbear_trait_other
 			}
-			desc = trait_polarbear_character_desc
+			triggered_desc = {
+				trigger = { is_female = yes }
+				desc = polarbear_trait_female
+			}
+			desc = polarbear_trait_male
 		}
 	}
 
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { NOT = { exists = this } }
+				desc = polarbear_trait_other_desc
+			}
+			triggered_desc = {
+				trigger = { is_female = yes }
+				desc = polarbear_trait_male_female
+			}
+			desc = polarbear_trait_male_desc
+		}
+	}
+	
 	ai_energy = -50
 }

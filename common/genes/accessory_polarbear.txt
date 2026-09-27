@@ -8,9 +8,11 @@ accessory_genes = {
 				male = {
 					1 = empty
 				}
-				female = male
+				female  = {
+					1 = empty
+				}
 				boy = male
-				girl = male
+				girl = female
 			}	
 
 			polarbear = {

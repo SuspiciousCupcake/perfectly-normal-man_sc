@@ -1,0 +1,13 @@
+﻿# namespace = polarbear
+
+# polarbear.0001 = {
+# 	hidden = yes
+
+# 	trigger = {
+# 		has_trait = polarbear
+# 	}
+
+# 	immediate = {
+# 		set_culture = culture:polarbear
+# 	}
+# }
