@@ -1,0 +1,20 @@
+name_list_polarbear = {
+
+	cadet_dynasty_names = {
+		{ "dynn_Bonson" }
+	}
+
+	dynasty_names = {
+		{ "dynn_Bonson" }
+	}
+
+	male_names = {
+		Joris Barbearian Gummy Bum
+	}
+	female_names = {
+		Bearly
+	}
+	dynasty_of_location_prefix = "dynnp_of"
+
+	
+}

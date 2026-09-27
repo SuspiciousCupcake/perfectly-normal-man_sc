@@ -1,0 +1,32 @@
+polarbear = {
+	diplomacy = -3
+	stewardship = -3
+	martial = -3
+	prowess = 9
+	fertility = 0.3
+	
+	genetic = yes
+	physical = yes
+	
+	can_have_children = yes
+	disables_combat_leadership = no
+	shown_in_ruler_designer = yes
+	attraction_opinion = 10
+
+	can_inherit = yes
+	blocks_from_claim_inheritance = no
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_polarbear_desc
+			}
+			desc = trait_polarbear_character_desc
+		}
+	}
+
+	ai_energy = -50
+}

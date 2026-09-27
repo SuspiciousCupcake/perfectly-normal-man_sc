@@ -1,0 +1,17 @@
+language_polarbear = {
+	type = language
+	is_shown = {
+		language_is_shown_trigger = {
+			LANGUAGE = language_polarbear
+		}
+	}
+	ai_will_do = {
+		value = 10
+		if = {
+			limit = { has_cultural_pillar = language_polarbear }
+			multiply = 10
+		}
+	}
+	
+	color = lithuanian
+}

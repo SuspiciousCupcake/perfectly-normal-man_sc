@@ -1,0 +1,3 @@
+heritage_polarbear = {
+	type = heritage
+}

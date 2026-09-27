@@ -1,0 +1,45 @@
+polarbear = {
+	template = "ethnicity_template"
+    visible = no
+
+    skin_color = {
+		10 = { 1.0 1.0 1.0 1.0 }
+	}
+
+	eye_color = {
+        10 = { 0.0 0.0 1.0 1.0 }
+	}
+
+	hair_color = {
+		10 = { 0.0 0.0 1.0 1.0 }
+	}
+
+    gene_polarbear = {
+        10 = { name = polarbear          range = { 0.0 1.0 } }
+    }  
+
+    gene_height = {
+        10 = { name = normal_height          range = { 0.5 0.5 } }
+    }  
+
+    gene_no_portrait = {
+        10 = { name = no_portrait          range = { 1.0 1.0 } }
+    }  
+
+    eyelashes_accessory = {
+        10 = { name = no_eyelashes          range = { 1.0 1.0 } }
+    }   
+
+    eye_accessory = {
+        10 = { name = no_eyes      range = { 1.0 1.0 } }
+    } 
+
+    teeth_accessory = {
+        10 = { name = no_teeth      range = { 1.0 1.0 } }
+    } 
+
+    gene_bs_body_type = {
+        10 = { name = body_fat_head_fat_full    range = {0.3 0.7}}
+    }
+
+} 
