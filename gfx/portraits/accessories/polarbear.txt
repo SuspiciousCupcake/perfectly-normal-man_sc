@@ -3,5 +3,5 @@ polarbear = {
 	set_tags = "no_hair"
 	set_tags = "no_beard"
 	set_tags = "no_legwear"
-	entity = {	    node = "ground_joint"	entity = "polarbear_entity" }
+	entity = { node = "ground_joint"	entity = "polarbear_entity" }
 }

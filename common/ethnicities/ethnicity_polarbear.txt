@@ -15,7 +15,7 @@ polarbear = {
 	}
 
     gene_polarbear = {
-        10 = { name = polarbear          range = { 0.0 1.0 } }
+        10 = { name = polarbear          range = { 1.0 1.0 } }
     }  
 
     gene_height = {
@@ -36,10 +36,6 @@ polarbear = {
 
     teeth_accessory = {
         10 = { name = no_teeth      range = { 1.0 1.0 } }
-    } 
-
-    gene_bs_body_type = {
-        10 = { name = body_fat_head_fat_full    range = {0.3 0.7}}
     }
 
 } 

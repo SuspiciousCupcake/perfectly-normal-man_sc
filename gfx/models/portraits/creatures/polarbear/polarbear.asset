@@ -3,15 +3,10 @@ pdxmesh = {
 	file = "polarbear.mesh"
 	scale = 1
 
-	blend_shape = { id = "polarbear_gaunt"				type = "polarbear_gaunt.mesh" }
-	blend_shape = { id = "polarbear_muscular"			type = "polarbear_muscular.mesh" }
+	blend_shape = { id = "polarbear_gaunt" type = "polarbear_gaunt.mesh" }
+	blend_shape = { id = "polarbear_muscular" type = "polarbear_muscular.mesh" }
 
-	animation = { id = "polarbear_idle_1"						type = "polarbear_idle_1.anim" }
-	animation = { id = "polarbear_idle_2"						type = "polarbear_idle_2.anim" }
-	animation = { id = "polarbear_idle_3"						type = "polarbear_idle_3.anim" }
-	animation = { id = "polarbear_idle_4"						type = "polarbear_idle_4.anim" }
-
-
+	animation = { id = "polarbear_idle_1" type = "polarbear_idle_1.anim" }
 
 	meshsettings = {
 		name = "polarbear"
@@ -39,14 +34,11 @@ entity = {
 	 
 	get_state_from_parent = no
 
-	attribute = { name = "bs_body_gaunt_1"					blend_shape = "polarbear_gaunt" }
-	attribute = { name = "bs_body_fat_1"				blend_shape = "polarbear_muscular" }
+	attribute = { name = "bs_body_gaunt_1" blend_shape = "polarbear_gaunt" }
+	attribute = { name = "bs_body_fat_1" blend_shape = "polarbear_muscular" }
 
 	default_state = "idle_entry"
 
-	state = {	name = "idle_entry"							animation = "polarbear_idle_1" looping = no next_state = "idle" }
-	state = {	name = "idle"							animation = "polarbear_idle_1" chance = 10 looping = no next_state = "idle_entry" }
-	state = {	name = "idle"							animation = "polarbear_idle_2" chance = 1 looping = no next_state = "idle_entry" }
-	state = {	name = "idle"							animation = "polarbear_idle_3" chance = 1 looping = no next_state = "idle_entry" }
-	state = {	name = "idle"							animation = "polarbear_idle_4" chance = 1 looping = no next_state = "idle_entry" }
+	state = {	name = "idle_entry" animation = "polarbear_idle_1" looping = no next_state = "idle" }
+	state = {	name = "idle" animation = "polarbear_idle_1" chance = 10 looping = no next_state = "idle_entry" }
 }
