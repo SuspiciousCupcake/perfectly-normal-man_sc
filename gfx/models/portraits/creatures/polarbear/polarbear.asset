@@ -6,7 +6,7 @@ pdxmesh = {
 	blend_shape = { id = "polarbear_gaunt" type = "polarbear_gaunt.mesh" }
 	blend_shape = { id = "polarbear_muscular" type = "polarbear_muscular.mesh" }
 
-	animation = { id = "polarbear_idle_1" type = "polarbear_idle_1.anim" }
+	animation = { id = "polarbear_idle_1" type = "polarbear_idle_sit.anim" }
 
 	meshsettings = {
 		name = "polarbear"
