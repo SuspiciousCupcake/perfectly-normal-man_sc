@@ -1,11 +1,27 @@
-﻿# Empty scope
-on_game_start = {
-	events = {
-		polarbear.0002 #check that anyone who has polar bear culture has the polar bear trait
-	}
+﻿on_game_start_after_lobby = {
+    on_actions = {
+        polarbear_on_action #checks every character to see if they have the polarbear culture and adds the polarbear trait if they do
+    }
 }
+
+quarterly_playable_pulse = {
+    on_actions = {
+        polarbear_on_action #checks every character to see if they have the polarbear culture and adds the polarbear trait if they do
+    }
+}
+
 on_birth_child = {
 	events = {
-		polarbear.0001 #give polar bear trait to polar bears born with polar bear ethnicity
+		polarbear.0001 #check if child should be a polar bear
 	}
+}
+
+polarbear_on_action = {
+	effect = {
+        every_player = {
+			trigger_event = {
+				id = polarbear.0003
+			}
+        }
+    }
 }
