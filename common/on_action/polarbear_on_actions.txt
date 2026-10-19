@@ -1,0 +1,11 @@
+﻿# Empty scope
+on_game_start = {
+	events = {
+		polarbear.0002 #check that anyone who has polar bear culture has the polar bear trait
+	}
+}
+on_birth_child = {
+	events = {
+		polarbear.0001 #give polar bear trait to polar bears born with polar bear ethnicity
+	}
+}

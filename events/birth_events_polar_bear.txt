@@ -1,0 +1,49 @@
+﻿namespace = polarbear
+
+#Give polar bear trait to polar bears born with polar bear ethnicity
+polarbear.0001 = {
+	hidden = yes
+	type = character_event
+	trigger = {
+		AND = {
+			OR = {
+				real_father = {
+					OR = {
+						has_trait = polarbear_trait
+						has_culture = polarbear
+					}
+				}
+				mother = {
+					OR = {
+						has_trait = polarbear_trait
+						has_culture = polarbear
+					}
+				}
+			}
+			NOT = {
+				has_trait = polarbear_trait
+			}
+		}
+	}
+
+	hidden_effect = {
+		add_trait = polarbear_trait
+		set_culture = polarbear
+	}
+}
+
+#Check that anyone who has polar bear culture has the polar bear trait
+polarbear.0002 = {
+	hidden = yes
+	type = character_event
+	trigger = {
+			has_culture = polarbear
+			NOT = {
+				has_trait = polarbear_trait
+			}
+		}
+
+	hidden_effect = {
+		add_trait = polarbear_trait
+	}
+}
