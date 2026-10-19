@@ -9,12 +9,11 @@ name_list_polarbear = {
 	}
 
 	male_names = {
-		Joris Barbearian Gummy Bum
+		Joris Barbearian Gummy Bum Trashi Barnaby Bjorn Freyr Gunnar Ivar Kodiak Leif Nanook Torin Yukon Ursus Bliz Frosty Bergie Igloo Polaris Tundra  Winterpaw Frostbite Snowstorm Winterclaw Arthur Boris Orson Chilly Cubby Flurry Marshmallow Paws Puff Snowy Teddy Waddles Iorek Bernard Knut Grizzly Samson Yeti Timber Baloo Paddington Yogi Pooh Fozzie Smokey Rupert Grylls Bubba Honey Rolo Fudge Kenai Barrett Dov Osborne
 	}
 	female_names = {
-		Bearly
+		Bearly Frostina Snowflake Icequeen Winterbella Glacina Hiberna Snowy Icelyn Polarina Snowbell Snowpelt Ursa Anya Astrid Freya Ingrid Nila Nita Siku Sula Talia Yura Aurora Celeste Crystal Elsa Eira Nova Snowdrop Athena Angel Buttercup Daisy Misty Pearl Snowpuff Serafina Flocke Neva Snowball Bernadette Ursula Bella Masha Winnie Penelope Willow Hazel Flora Pebbles Blossom Button Toffee Goldilocks Honeycomb Pudding Cupcake Muffin Cookie
 	}
-	dynasty_of_location_prefix = "dynnp_of"
+	dynasty_of_location_prefix = "of"
 
-	
 }
