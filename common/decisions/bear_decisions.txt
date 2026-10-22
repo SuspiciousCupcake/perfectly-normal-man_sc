@@ -1,0 +1,32 @@
+﻿polar_bear_transformation = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_polar_bear.dds"
+	}
+	desc = polar_bear_transformation_desc
+	selection_tooltip = polar_bear_transformation_tooltip
+
+	ai_check_interval = 0
+
+	is_shown = {
+		NOT = { has_trait = polarbear_trait }
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_incapable = no
+	}
+
+	effect = {
+		add_trait = polarbear_trait
+		set_culture = culture:polarbear
+	}
+	
+	ai_potential = {
+		always = no
+	}
+
+
+	ai_will_do = {
+		base = 0
+	}
+}

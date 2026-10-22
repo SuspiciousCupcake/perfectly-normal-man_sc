@@ -15,7 +15,7 @@ polarbear.0001 = {
 	}
 	immediate = {
 		add_trait = polarbear_trait
-		set_culture = polarbear
+		set_culture = culture:polarbear
 	}
 }
 
