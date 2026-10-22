@@ -6,7 +6,9 @@ pdxmesh = {
 	blend_shape = { id = "polarbear_gaunt" type = "polarbear_gaunt.mesh" }
 	blend_shape = { id = "polarbear_muscular" type = "polarbear_muscular.mesh" }
 
-	animation = { id = "polarbear_idle_1" type = "polarbear_idle_sit.anim" }
+	animation = { id = "body_idle_1" type = "polarbear_idle_sit.anim" }
+	animation = { id = "body_bind_pose" type = "polarbear_bind_pose.anim" }
+	animation = { id = "body_emotion_laugh_1" type = "polarbear_emotion_laugh.anim" }
 
 	meshsettings = {
 		name = "polarbear"
@@ -32,13 +34,19 @@ entity = {
 		}
 	 }
 	 
-	get_state_from_parent = no
+	get_state_from_parent = yes
 
 	attribute = { name = "bs_body_gaunt_1" blend_shape = "polarbear_gaunt" }
 	attribute = { name = "bs_body_fat_1" blend_shape = "polarbear_muscular" }
 
-	default_state = "idle_entry"
+	default_state = "none"
 
-	state = {	name = "idle_entry" animation = "polarbear_idle_1" looping = no next_state = "idle" }
-	state = {	name = "idle" animation = "polarbear_idle_1" chance = 10 looping = no next_state = "idle_entry" }
+	state = {	name = "none"															animation = "body_idle_1" }
+	state = {	name = "idle_entry"														animation = "body_idle_1" chance = 10 looping = no  next_state = "idle" }
+	state = {	name = "idle"															animation = "body_idle_1" chance = 10 looping = no next_state = "idle" }
+
+	state = {	name = "bind_pose"														animation = "body_bind_pose" looping = no next_state = "bind_pose" }
+
+	state = {	name = "emotion_laugh_entry"											animation = "body_emotion_laugh_1" next_state = "emotion_laugh" }
+	state = {	name = "emotion_laugh"													animation = "body_emotion_laugh_1" next_state = "emotion_laugh" }
 }
