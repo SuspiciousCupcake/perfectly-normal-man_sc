@@ -1,27 +1,59 @@
-﻿on_game_start_after_lobby = {
+﻿####
+#on_game_start to check if any characters have the polarbear culture and adds the polarbear trait if they don't have it
+on_game_start_after_lobby = {
     on_actions = {
-        polarbear_on_action #checks every character to see if they have the polarbear culture and adds the polarbear trait if they do
+        polarbear_on_action 
     }
-}
-
-quarterly_playable_pulse = {
-    on_actions = {
-        polarbear_on_action #checks every character to see if they have the polarbear culture and adds the polarbear trait if they do
-    }
-}
-
-on_birth_child = {
-	events = {
-		polarbear.0001 #check if child should be a polar bear
-	}
 }
 
 polarbear_on_action = {
 	effect = {
         every_player = {
 			trigger_event = {
-				id = polarbear.0003
+				id = polarbear.0002
 			}
         }
     }
+}
+
+####
+#check if baby has the polarbear culture and adds the polarbear trait if they don't have it
+on_birth_child = {
+	events = {
+		polarbear.0001
+	}
+}
+
+####
+#all to check if character has mismatched polar bear culture and trait
+on_character_created = {
+    event = {
+        polarbear.0003
+    }
+}
+
+on_trait_gained = {
+    event = {
+        polarbear.0003
+    }
+}
+
+on_character_culture_change = {
+    event = {
+        polarbear.0003
+    }
+}
+
+####
+#polar bear tombola events
+quarterly_playable_pulse = {
+    on_actions = {
+        tombola_polarbear_flavour_events
+    }
+}
+
+tombola_polarbear_flavour_events = {
+random_events = {
+		# 100 = polarbearminor.0001
+	}
 }

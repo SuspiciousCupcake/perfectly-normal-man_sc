@@ -1,0 +1,91 @@
+﻿namespace = polarbearminor
+
+# polarbearminor.0001 = {
+# 	hidden = yes
+# 	trigger = {
+# 		NOT = { has_character_flag = polarbearminor_0001_triggered }
+# 	}
+# 	immediate = {
+# 		any_courtier_or_guest = {
+# 			is_available_healthy_ai_adult = yes
+# 			save_temporary_scope_as = polarbearinvestigator
+# 		}
+# 		root = {
+# 			add_character_flag = polarbearminor_0001_triggered
+# 			character_event = {
+# 				id = polarbearminor.0002
+# 				days = 1
+# 			}
+# 		}
+# 	}
+# }
+
+# polarbearminor.0002 = {
+# 	type = character_event
+# 	title = polarbearminor.0002.t
+# 	desc = polarbearminor.0002.desc
+	
+# 	theme = intrigue_intimidation_focus
+# 	override_background = { reference = tavern }
+# 	left_portrait = {
+# 		character = root
+# 		animation = worry
+# 	}
+# 	right_portrait = {
+# 		character = polarbearinvestigator
+# 		animation = fear
+# 	}
+
+# 	option = { #Yes, participate!
+# 		name = polarbearminor.0002.a
+# 		custom_tooltip = polarbearminor.0002.tooltip
+# 		stress_and_fulfillment_impact = {
+# 			shy = minor_stress_impact_gain
+# 		}
+# 	}
+
+# 	option = { #Yes, participate!
+# 		name = polarbearminor.0002.b
+# 		custom_tooltip = polarbearminor.0002.tooltip
+# 		stress_and_fulfillment_impact = {
+# 			shy = major_stress_impact_gain
+# 		}
+# 	}
+# }
+
+# Polar Bear Secret
+
+polarbearminor.9995 = {
+	type = character_event
+	title = polarbearminor.9995.t
+	desc = polarbearminor.9995.desc
+	theme = secret
+	left_portrait = {
+		character = root
+		animation = schadenfreude
+	}
+	right_portrait = {
+		character = scope:secret_exposer
+		animation = disgust
+	}
+	lower_right_portrait = {
+		character = scope:secret_target
+		animation = grief
+		trigger = {
+			OR = {
+				scope:secret_target != scope:secret_exposer
+				scope:secret_target != root
+			}
+		}
+	}
+	
+	immediate = {
+		secret_exposed_owner_effects_effect = { SECRET = scope:secret POV = root }
+		secret_exposed_owner_opinion_effects_effect = yes
+		play_music_cue = "mx_cue_secret"
+	}
+
+	option = {
+		name = polarbearminor.9995.a
+	}
+}

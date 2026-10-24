@@ -16,10 +16,14 @@ polarbear.0001 = {
 	immediate = {
 		add_trait = polarbear_trait
 		set_culture = culture:polarbear
+		add_secret = {
+			type = secret_polar_bear
+		}
 	}
 }
 
-polarbear.0003 = {
+#Double check your polar bears on the game starting
+polarbear.0002 = {
 	hidden = yes
 	immediate = {
 		every_living_character = {
@@ -30,6 +34,27 @@ polarbear.0003 = {
 				}
 			}
 			add_trait = polarbear_trait
+			add_secret = {
+				type = secret_polar_bear
+			}
+		}
+	}
+}
+
+#Align polar bear culture and trait for appearance
+polarbear.0003 = {
+	hidden = yes
+	trigger = {
+		OR = {
+			has_trait = polarbear_trait
+			culture = culture:polarbear
+		}
+	}
+	immediate = {
+		set_culture = culture:polarbear
+		add_trait = polarbear_trait
+		add_secret = {
+			type = secret_polar_bear
 		}
 	}
 }
