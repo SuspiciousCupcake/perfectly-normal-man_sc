@@ -66,6 +66,12 @@ polarbear_portrait = {
 				template = no_legwear
 				value = 0
 			} 
+			accessory = {
+				mode = add
+				gene = special_headgear_face_mask
+				template = no_mask
+				value = 0
+			} 
 		}
 
         weight = {
