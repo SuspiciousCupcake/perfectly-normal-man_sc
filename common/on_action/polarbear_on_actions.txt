@@ -53,7 +53,31 @@ quarterly_playable_pulse = {
 }
 
 tombola_polarbear_flavour_events = {
-random_events = {
+	random_events = {
 		# 100 = polarbearminor.0001
+	}
+}
+
+# fix for issue #3
+on_character_created = {
+    on_actions = {	
+        polarbear_on_character_created
+    }
+}
+
+polarbear_on_character_created = {
+	effect = {
+		if = {
+			limit = {
+				culture = culture:polarbear
+				NOT = {
+					has_trait = polarbear_trait
+				}
+			}
+			add_trait = polarbear_trait
+			add_secret = {
+				type = secret_polar_bear
+			}
+		}
 	}
 }
