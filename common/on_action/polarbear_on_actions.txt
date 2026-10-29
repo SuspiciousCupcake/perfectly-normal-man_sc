@@ -27,19 +27,19 @@ on_birth_child = {
 ####
 #all to check if character has mismatched polar bear culture and trait
 on_character_created = {
-    event = {
+    events = {
         polarbear.0003
     }
 }
 
 on_trait_gained = {
-    event = {
+    events = {
         polarbear.0003
     }
 }
 
 on_character_culture_change = {
-    event = {
+    events = {
         polarbear.0003
     }
 }

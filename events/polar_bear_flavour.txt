@@ -53,6 +53,231 @@
 # 	}
 # }
 
+scripted_trigger polarbearminor_0010_valid_child_trigger = {
+	is_available_child_allow_travel = yes
+	age >= 4 # Kid should be able to talk
+	age <= 10
+	NOR = {
+		is_close_or_extended_family_of = root
+		dynasty ?= root.dynasty
+		has_trait = polarbear_trait
+	}
+	NOT = {
+		has_trait = shy
+	}
+}
+
+scripted_trigger polarbearminor_0010_valid_child_in_location_trigger = {
+	location ?= {
+		any_character_in_location = {
+			polarbearminor_0010_valid_child_trigger = yes
+		}
+	}
+}
+
+polarbearminor.0010 = { # Can I pet that dawg?
+	type = character_event
+	title = polarbearminor.0010.t
+	desc = polarbearminor.0010.desc
+	theme = mental_health
+	override_background = wilderness
+
+	left_portrait = {
+		character = root
+		animation = worry
+		camera = camera_activity_horse
+	}
+	right_portrait = {
+		character = scope:petting_child
+		animation = pointing
+		camera = camera_event_center_pointing_forward_fov35
+	}
+
+	cooldown = { years = 20 }
+
+	trigger = {
+		is_location_valid_for_travel_event_on_land = yes # Must on a valid province
+	}
+
+	immediate = {
+		if = {
+			limit = { 
+				polarbearminor_0010_valid_child_in_location_trigger = yes # Has a valid child character inside location
+			}
+			location ?= {
+				random_character_in_location = {
+					limit = {
+						polarbearminor_0010_valid_child_trigger = yes
+					}
+					save_scope_as = petting_child
+				}
+			}
+		}
+		else = { # Create one if one doesn't exist
+			create_character = {
+				age = { 4 10 }
+				location = root.location
+				rite = root.location.rite
+				culture = root.location.culture
+
+				trait = brave
+				trait = gregarious
+				trait = curious
+
+				save_scope_as = petting_child
+			}
+		}
+	}
+
+	option = { # Allow
+		name = polarbearminor.0010.a
+		flavor = polarbearminor.0010.a_flavour
+
+		stress_and_fulfillment_impact = {
+			base = minor_stress_impact_loss
+			gregarious = minor_stress_impact_loss
+
+			arrogant = medium_stress_impact_gain
+			shy = medium_stress_impact_gain
+			paranoid = medium_stress_impact_gain
+		}
+
+		add_character_modifier = {
+			modifier = polarbear_allowed_petting_child
+			years = 5
+		}
+
+		reverse_add_opinion = {
+			target = scope:petting_child
+			modifier = kindness_opinion
+			opinion = 10
+		}
+		
+		random = { # Kids are gross
+			chance = 1
+
+			add_trait = bubonic_plague
+		}
+	}
+
+	option = { # Do not allow!
+		name = polarbearminor.0010.b
+
+		stress_and_fulfillment_impact = {
+			shy = medium_stress_impact_loss
+			paranoid = medium_stress_impact_loss
+
+			gregarious = minor_stress_impact_gain
+		}
+		
+		add_prestige = minor_prestige_gain
+
+		add_character_modifier = {
+			modifier = polarbear_did_not_allow_petting_child
+			years = 5
+		}
+
+		reverse_add_opinion = {
+			target = scope:petting_child
+			modifier = upset_opinion
+			opinion = -10
+		}
+	}
+
+	option = { # Roar!
+		name = polarbearminor.0010.c
+
+		stress_and_fulfillment_impact = {
+			callous = medium_stress_impact_loss
+			wrathful = medium_stress_impact_loss
+
+			compassionate = medium_stress_impact_gain
+		}
+		
+		add_prowess_skill = 1
+		add_dread = 5
+
+		add_character_modifier = {
+			modifier = polarbear_roared_at_petting_child
+			years = 5
+		}
+
+		reverse_add_opinion = {
+			target = scope:petting_child
+			modifier = scared_opinion
+			opinion = -20
+		}
+	}
+
+	option = { # Tasty...
+		name = polarbearminor.0010.d
+		flavor = polarbearminor.0010.d_flavour
+		trigger = {
+			OR = {
+				is_cannibal_trigger = yes
+				has_trait = sadistic
+				domicile ?= { 
+					domicile_uses_provisions = yes
+					provisions <= 500 
+				}
+			}
+		}
+		scope:petting_child = {
+			death = {
+				death_reason = death_eaten
+				killer = root
+			}
+			if = {
+				limit = { 
+					any_parent = {
+						exists = this
+						is_alive = yes
+					}
+				}
+				every_parent = {
+					limit = {
+						is_alive = yes
+					}
+					add_opinion = {
+						target = root
+						modifier = suspicion_opinion
+						opinion = -20
+					}
+				}
+			}
+		}
+
+		stress_and_fulfillment_impact = {
+			callous = medium_stress_impact_loss
+			sadistic = medium_stress_impact_loss
+			cannibal = major_stress_impact_loss
+
+			compassionate = major_stress_impact_gain
+		}
+		
+		if = {
+			limit = { 
+				is_cannibal_trigger = no
+			}
+			give_cannibal_secret_or_trait_effect = yes
+		}
+		domicile ?= {
+			if = {
+				limit = { domicile_uses_provisions = yes }
+				change_provisions = {
+					value = 100
+					add = scope:petting_child.current_weight
+					multiply = 1.5
+				}
+			}
+		}
+		add_character_modifier = {
+			modifier = feast_good_food_modifier
+			years = 1
+		}
+	}
+}
+
 # Polar Bear Secret
 
 polarbearminor.9995 = {

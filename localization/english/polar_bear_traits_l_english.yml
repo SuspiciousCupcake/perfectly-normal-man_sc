@@ -18,6 +18,23 @@
  name_list_polarbear:0 "Bear Kind"
  secret_polar_bear_desc:0 "Is a Polar Bear"
  secret_polar_bear_tooltip_desc:0 "You are a polar bear, and you have been hiding this fact from everyone. Most believe you are a perfectly normal person, but you are actually, in fact, a polar bear. Should this secret be revealed then you will most certainly face a consequence, possibly. Or you might be able to play it off as so unbelievable that no one would bat an eye."
+
+
+ # ---------------------------------------------------------------------------- #
+ #                                   MODIFIERS                                  #
+ # ---------------------------------------------------------------------------- #
+
+ polarbear_allowed_petting_child: "Allowed Child to Pet"
+ polarbear_allowed_petting_child_desc: "This $polarbear_trait_other$ allowed a curios child that wanted to, for some reason, pet them."
+ polarbear_did_not_allow_petting_child: "Didn't Allow Child to Pet"
+ polarbear_did_not_allow_petting_child_desc: "This $polarbear_trait_other$ did not allow a weirdo child that wanted to pet them."
+ polarbear_roared_at_petting_child: "Roared at Child"
+ polarbear_roared_at_petting_child_desc: "This $polarbear_trait_other$ roared at and fended off a menace that wanted to pet them."
+
+ # ---------------------------------------------------------------------------- #
+ #                                    EVENTS                                    #
+ # ---------------------------------------------------------------------------- #
+
  polarbearminor.9995.t:0 "A Perfectly Normal... What?"
  polarbearminor.9995.desc:0 "[secret_exposer.Custom2('MyCharacterIntroduction', ROOT.Char)|U] has revealed my secret for the world to see!\n\nMy shiny white fur and uncontrollable hunger for seal blubber are widely known, and accepted as fact!"
  polarbearminor.9995.a:0 "We're just normal men... just innocent men..."
@@ -25,3 +42,14 @@
  polarbearminor.0002.desc:0 "[polarbearinvestigator] suddenly looks to me with shock, awe, and a primal fear that I am not accustomed to. It's as if they have seen a great beast in front of them, but there is no one around, other than me."
  polarbearminor.0002.a:0 "It's just a perfectly normal person, nothing to see here!"
  polarbearminor.0002.b:0 "You've seen through my disguise!?"
+
+
+ polarbearminor.0010.t: "Can I Pet That... Person?"
+ polarbearminor.0010.desc: "As I was enjoying a quit stroll by myself, I suddenly hear a high pitched sound call out to me!\n\n“#EMP Can I pet dat dawg?#!”\n\nQuickly turning around I find myself face to face with a small child! Before I am able to comprehend the question asked to me, [petting_child.GetFirstName] repeats [petting_child.GetHerselfHimself]: “#EMP Can I pet dat dawg?#!”\n\nFor some reason you cannot understand, this tiny human wants to... pet you. Has... has [petting_child.GetFirstNameNoTooltip] managed to see through your impeccable disguise!? Also where are the parents of this thing!?"
+ 
+ polarbearminor.0010.a: "Indulge the Child"
+ polarbearminor.0010.a_flavour: "Children are gross..."
+ polarbearminor.0010.b: "Reject the Child"
+ polarbearminor.0010.c: "#S Roar#! at Child!"
+ polarbearminor.0010.d: "Free Meal!"
+ polarbearminor.0010.d_flavour: "Should you eat one of your own so easily?"
