@@ -27,19 +27,19 @@ on_birth_child = {
 ####
 #all to check if character has mismatched polar bear culture and trait
 on_character_created = {
-    event = {
+    events = {
         polarbear.0003
     }
 }
 
 on_trait_gained = {
-    event = {
+    events = {
         polarbear.0003
     }
 }
 
 on_character_culture_change = {
-    event = {
+    events = {
         polarbear.0003
     }
 }
@@ -53,7 +53,26 @@ quarterly_playable_pulse = {
 }
 
 tombola_polarbear_flavour_events = {
-random_events = {
+    random_events = {
 		# 100 = polarbearminor.0001
 	}
+}
+
+# ----------------------- Yearly Random Flavour Events ----------------------- #
+
+yearly_playable_pulse = {
+    on_actions = {
+        yearly_polarbear_flavour_events
+    }
+}
+
+yearly_polarbear_flavour_events = {
+    trigger = {
+        has_trait = polarbear_trait
+    }
+
+    random_events = {
+        200 = 0
+        1 = polarbearminor.0010 # Can I pet that dawg?
+    }
 }

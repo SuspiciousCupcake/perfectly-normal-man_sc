@@ -1,0 +1,22 @@
+﻿polarbear_allowed_petting_child = {
+	icon = social_positive
+	
+	general_opinion = 5
+	monthly_dynasty_prestige = 0.05
+}
+
+polarbear_did_not_allow_petting_child = {
+	icon = prestige_positive
+	
+	monthly_prestige = 0.10
+	child_opinion = -5
+}
+
+polarbear_roared_at_petting_child = {
+	icon = dread_positive
+	
+	dread_baseline_add = 5
+	dread_loss_mult = -0.1
+	dread_decay_mult = -0.1
+	general_opinion = -5
+}
